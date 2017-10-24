@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ZLBaseTabController.h"
+#import "LoginViewController.h"
+#import "ZLBaseNavController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[ZLBaseNavController alloc] initWithRootViewController:[[LoginViewController alloc]init]];
+    //    self.window.rootViewController = [[ZLBaseTabController alloc]init];
+    
     return YES;
 }
 
